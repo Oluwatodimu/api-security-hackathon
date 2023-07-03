@@ -26,7 +26,7 @@ public class AcceptHeaderFilter extends OncePerRequestFilter {
         try {
 
             if (acceptHeader == null || !acceptHeader.equalsIgnoreCase(AuthoritiesConstants.ACCEPT)) {
-                throw new AcceptHeaderNotParsedInRequestException("Accept parameter should be set to application/json");
+                throw new AcceptHeaderNotParsedInRequestException("Accept header parameter should be set to application/json");
             }
             filterChain.doFilter(request, response);
 
