@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-security
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/api-security?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: Zawarudo12!@
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
+
+redis:
+  host: localhost
+  port: 6379
+  password:
+  database: 0
+  timeout: 1000
+  timeToLive: 15
+
+treblle:
+  api-key: HeyANOrCZwEPLKD3ViPhQKSDXJfJMYTg
+  project-id: 4CzWWTjm39C5T4SX
