@@ -1,5 +1,7 @@
 package io.todimu.compete.apisecurity.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import io.todimu.compete.apisecurity.security.filter.AcceptHeaderFilter;
 import io.todimu.compete.apisecurity.security.filter.JwtValidationFilter;
 import io.todimu.compete.apisecurity.security.jwt.JwtTokenProvider;
 import io.todimu.compete.apisecurity.utils.AuthoritiesConstants;
@@ -13,6 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.header.HeaderWriterFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
 import java.util.Collections;
@@ -24,6 +27,7 @@ import java.util.List;
 public class SecurityConfig {
 
     private final JwtTokenProvider jwtTokenProvider;
+    private final ObjectMapper objectMapper;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -44,6 +48,7 @@ public class SecurityConfig {
                         })
                 .and()
                 .addFilterBefore(new JwtValidationFilter(jwtTokenProvider), BasicAuthenticationFilter.class)
+                .addFilterBefore(new AcceptHeaderFilter(objectMapper), HeaderWriterFilter.class)
                 .authorizeRequests()
                 .antMatchers("/actuator/health").permitAll()
                 .antMatchers("/api/v1/student/register").permitAll()

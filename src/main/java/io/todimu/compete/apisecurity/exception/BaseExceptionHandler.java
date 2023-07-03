@@ -54,7 +54,7 @@ public class BaseExceptionHandler {
     }
 
     @ResponseBody
-    @ExceptionHandler(RateLimitException.class)
+    @ExceptionHandler({RateLimitException.class})
     @ResponseStatus(HttpStatus.TOO_MANY_REQUESTS)
     public BaseResponse handleRateLimitException(RateLimitException ex) {
        return new BaseResponse(null, ex.getMessage(), true);
