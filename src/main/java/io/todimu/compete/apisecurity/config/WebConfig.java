@@ -15,7 +15,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/api/v1/student/register")
                 .addPathPatterns("/api/v1/student/activate")
                 .addPathPatterns("/api/v1/user/authenticate")
-                .addPathPatterns("/api/v1/student/retrieve/**")
+                .addPathPatterns("/api/v1/student/retrieve/emailOrMatricNumber")
                 .addPathPatterns("/api/v1/student/retrieve")
                 .addPathPatterns("/api/v1/student/update")
                 .addPathPatterns("/api/v1/teacher/register")

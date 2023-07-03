@@ -54,7 +54,7 @@ public class SecurityConfig {
                 .antMatchers("/api/v1/student/register").permitAll()
                 .antMatchers("/api/v1/student/activate").permitAll()
                 .antMatchers("/api/v1/user/authenticate").permitAll()
-                .antMatchers("/api/v1/student/retrieve/**").authenticated()
+                .antMatchers("/api/v1/student/retrieve/emailOrMatricNumber").authenticated()
                 .antMatchers("/api/v1/student/retrieve").authenticated()
                 .antMatchers("/api/v1/student/update").authenticated()
                 .antMatchers("/api/v1/teacher/register").authenticated()

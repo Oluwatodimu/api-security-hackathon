@@ -45,8 +45,8 @@ public class StudentController extends BaseController {
         return new ResponseEntity<>(new BaseResponse(response, ResponseConstants.SUCCESS, false), HttpStatus.OK);
     }
 
-    @GetMapping(value = "/retrieve/{emailOrMatricNumber}")
-    public ResponseEntity<BaseResponse> getStudentDetails(@PathVariable String emailOrMatricNumber) {
+    @GetMapping(value = "/retrieve/emailOrMatricNumber")
+    public ResponseEntity<BaseResponse> getStudentDetails(@RequestParam String emailOrMatricNumber) {
         log.info("getting student details for student : {}", emailOrMatricNumber);
         StudentDto response = studentService.getStudentDetails(emailOrMatricNumber);
         return new ResponseEntity<>(new BaseResponse(response, ResponseConstants.SUCCESS, false), HttpStatus.OK);

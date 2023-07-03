@@ -25,7 +25,7 @@ public class AllowedHeadersInterceptor implements HandlerInterceptor {
 
         switch (requestURI) {
             case "/actuator/health":
-            case "/api/v1/student/retrieve/**":
+            case "/api/v1/student/retrieve/emailOrMatricNumber":
             case "/api/v1/student/retrieve":
             case "/api/v1/course/retrieve":
             case "/api/v1/course-registration/retrieve":
