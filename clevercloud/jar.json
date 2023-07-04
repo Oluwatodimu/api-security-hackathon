@@ -1,0 +1,10 @@
+{
+  "build": {
+    "type": "maven",
+    "goal": "package"
+  },
+  "deploy": {
+    "jarName": "target/StudentPortal-0.0.1-SNAPSHOT.jar",
+    "command": "mvn clean package -Dspring.config.location=src/main/resources/application-dev.yml"
+  }
+}
