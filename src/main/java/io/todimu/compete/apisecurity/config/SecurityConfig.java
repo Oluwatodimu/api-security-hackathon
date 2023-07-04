@@ -1,8 +1,10 @@
 package io.todimu.compete.apisecurity.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.github.resilience4j.ratelimiter.RateLimiter;
 import io.todimu.compete.apisecurity.security.filter.AcceptHeaderFilter;
 import io.todimu.compete.apisecurity.security.filter.JwtValidationFilter;
+import io.todimu.compete.apisecurity.security.filter.RateLimitFilter;
 import io.todimu.compete.apisecurity.security.jwt.JwtTokenProvider;
 import io.todimu.compete.apisecurity.utils.AuthoritiesConstants;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +18,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter;
 import org.springframework.security.web.header.HeaderWriterFilter;
 import org.springframework.web.cors.CorsConfiguration;
 
@@ -29,6 +32,7 @@ public class SecurityConfig {
 
     private final JwtTokenProvider jwtTokenProvider;
     private final ObjectMapper objectMapper;
+    private final RateLimiter rateLimiter;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
@@ -62,6 +66,7 @@ public class SecurityConfig {
                 .and()
                 .addFilterBefore(new JwtValidationFilter(jwtTokenProvider), BasicAuthenticationFilter.class)
                 .addFilterBefore(new AcceptHeaderFilter(objectMapper), HeaderWriterFilter.class)
+                .addFilterAfter(new RateLimitFilter(rateLimiter, objectMapper), WebAsyncManagerIntegrationFilter.class)
                 .authorizeRequests()
                 .antMatchers("/actuator/health").permitAll()
                 .antMatchers("/api/v1/student/register").permitAll()

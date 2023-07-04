@@ -27,6 +27,10 @@ redis:
   timeout: 1000
   timeToLive: 15
 
+rate-limiter:
+  max-number-of-requests: 100
+  time-period-for-rate-limit: 2
+
 treblle:
   api-key: HeyANOrCZwEPLKD3ViPhQKSDXJfJMYTg
   project-id: 4CzWWTjm39C5T4SX
