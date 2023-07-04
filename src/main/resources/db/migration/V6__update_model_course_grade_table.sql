@@ -1,0 +1,2 @@
+ALTER TABLE course_grade
+    MODIFY COLUMN grade DECIMAL(10,2);

@@ -1,0 +1,65 @@
+name: API security project build
+
+on:
+  pull_request:
+    branches:
+      - dev
+      - main
+
+jobs:
+  test:
+    name: unit-testing
+    runs-on: ubuntu-22.04
+    defaults:
+      run:
+        shell: bash
+    #Job's steps
+    steps:
+      #Check-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+      #Set up JDK
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      #Set up Maven cache
+      - name: Cache Maven packages
+        #This action allows caching dependencies and build outputs to improve workflow execution time.
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      #Run Tests
+      - name: unit testing
+        run: |
+          echo "Unit Testing..."
+          mvn test
+
+  build:
+    name: build
+    runs-on: ubuntu-22.04
+    needs: test
+    steps:
+      #Check-out your repository under $GITHUB_WORKSPACE
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+      #Set up JDK
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 17
+      #Set up Maven cache
+      - name: Cache Maven packages
+        #This action allows caching dependencies and build outputs to improve workflow execution time.
+        uses: actions/cache@v1
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-m2
+      #Run Tests
+      - name: unit testing
+        run: |
+          echo "Unit Testing..."
+          mvn package
