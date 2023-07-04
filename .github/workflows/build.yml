@@ -61,5 +61,5 @@ jobs:
       #Run Tests
       - name: unit testing
         run: |
-          echo "Unit Testing..."
+          echo "building code..."
           mvn package
