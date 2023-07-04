@@ -39,9 +39,11 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
 
-        httpSecurity.headers().httpStrictTransportSecurity().includeSubDomains(true).maxAgeInSeconds(31536000)
+        final int MAX_AGE_SECONDS = 31536000;
+
+        httpSecurity.headers().httpStrictTransportSecurity().includeSubDomains(true).maxAgeInSeconds(MAX_AGE_SECONDS)
                 .and()
-                .addHeaderWriter(new StaticHeadersWriter("strict-transport-security", "max-age=31536000"));
+                .addHeaderWriter(new StaticHeadersWriter("strict-transport-security", "max-age= "+ MAX_AGE_SECONDS));
 
         httpSecurity.headers().contentSecurityPolicy("default-src 'self'; " +
                 "script-src 'self' 'unsafe-inline' 'nonce-random123'; " +
