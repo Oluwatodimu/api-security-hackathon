@@ -6,10 +6,13 @@ spring:
     name: api-security
 
   datasource:
-    url: jdbc:mysql://localhost:3306/api-security?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     type: com.zaxxer.hikari.HikariDataSource
-    username: root
-    password: Zawarudo12!@
+#    url: jdbc:mysql://localhost:3306/api-security?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+#    username: root
+#    password: Zawarudo12!@
+    url: jdbc:mysql://student-management-system.crruakemgggf.us-east-1.rds.amazonaws.com:3306/api-security?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+    username: admin
+    password: password123$
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -20,9 +23,9 @@ spring:
         useServerPrepStmts: true
 
 redis:
-  host: localhost
-  port: 6379
-  password:
+  host: redis-16989.c14.us-east-1-3.ec2.cloud.redislabs.com
+  port: 16989
+  password: EqEd3t4jnqQfHw3BV8QnWT2fMs3XvNZQ
   database: 0
   timeout: 1000
   timeToLive: 15

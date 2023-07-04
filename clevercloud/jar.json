@@ -4,7 +4,7 @@
     "goal": "package"
   },
   "deploy": {
-    "jarName": "target/api-security-0.0.1-SNAPSHOT.jar",
-    "command": "mvn clean package -Dspring.config.location=src/main/resources/application-dev.yml"
+    "jarName": "target/api-security-0.0.1-SNAPSHOT.jar"
   }
 }
+
