@@ -86,4 +86,4 @@ would be used to test our application, so the team decided to handle CORS config
 related CORS errors from in the testing process.
 
 
-I also took some pointers from the 10 rest commandments posted ealier.
+I also took some pointers from the 10 rest commandments posted earlier this week.
