@@ -24,7 +24,7 @@ public class ParentController {
 
     private final StudentService studentService;
 
-    @PatchMapping(value = "/update")
+    @PostMapping(value = "/create")
     @PreAuthorize(MethodAuthorityConstants.STUDENT_AND_ADMIN_ROLES)
     public ResponseEntity<BaseResponse> addParentsData(@RequestBody @Valid AddParentRequest addParentRequest) {
         log.info("add parent info for student : {}", addParentRequest.getMatricNumber());

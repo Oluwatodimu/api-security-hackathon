@@ -28,7 +28,7 @@ public class WebConfig implements WebMvcConfigurer {
                 .addPathPatterns("/api/v1/grade/update")
                 .addPathPatterns("/api/v1/grade/gpa")
                 .addPathPatterns("/api/v1/parent/retrieve")
-                .addPathPatterns("/api/v1/parent/update")
+                .addPathPatterns("/api/v1/parent/create")
         ;
     }
 }

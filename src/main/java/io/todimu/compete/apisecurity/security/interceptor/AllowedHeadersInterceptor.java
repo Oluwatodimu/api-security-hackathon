@@ -32,14 +32,15 @@ public class AllowedHeadersInterceptor implements HandlerInterceptor {
             case "/api/v1/grade/retrieve":
             case "/api/v1/grade/gpa":
             case "/api/v1/parent/retrieve":
+            case "/api/v1/user/authenticate":
                 method = GET;
                 break;
 
             case "/api/v1/student/register":
-            case "/api/v1/user/authenticate":
             case "/api/v1/teacher/register":
             case "/api/v1/course":
             case "/api/v1/course-registration":
+            case "/api/v1/parent/create":
             case "/api/v1/course-teacher":
                 method = POST;
                 break;
@@ -47,7 +48,6 @@ public class AllowedHeadersInterceptor implements HandlerInterceptor {
             case "/api/v1/student/activate":
             case "/api/v1/student/update":
             case "/api/v1/grade/update":
-            case "/api/v1/parent/update":
                 method = PATCH;
                 break;
             default:
