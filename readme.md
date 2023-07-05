@@ -84,3 +84,6 @@ sensitive information, such as database details or system internals, in error re
 6. Cors origin resource sharing (CORS) handling - We were not sure what sort of applications
 would be used to test our application, so the team decided to handle CORS configuration, in order to avoid such
 related CORS errors from in the testing process.
+
+
+I also took some pointers from the 10 rest commandments posted ealier.
