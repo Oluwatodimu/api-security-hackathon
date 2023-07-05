@@ -36,7 +36,8 @@ For more clarification, we made a
 table listing all the endpoints in the application, a brief description of what they do, and who can access them. This is shown below
 ![Screen Shot 2023-07-05 at 10 54 46 PM](https://github.com/Oluwatodimu/api-security-hackathon/assets/81085914/a85293a0-5670-4b8d-be94-f88c1979a8db)
 
-I hope this will be clear enough instructions for the judges, and once again thank your for the opportunity to participate in this hackathon
+I hope this will be clear enough instructions for the judges to navigate through the endpoints with ease, 
+and once again thank your for the opportunity to participate in this hackathon.
 
 ### 2. Steps Taken to Secure the APIs and Endpoints
 
