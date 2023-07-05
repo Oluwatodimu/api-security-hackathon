@@ -30,13 +30,6 @@ redis:
   timeout: 1000
   timeToLive: 15
 
-#redis:
-#  host: localhost
-#  port: 6379
-#  password:
-#  database: 0
-#  timeout: 1000
-#  timeToLive: 15
 
 rate-limiter:
   max-number-of-requests: 100
