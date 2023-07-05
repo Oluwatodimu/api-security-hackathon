@@ -37,3 +37,4 @@ rate-limiter:
 treblle:
   api-key: HeyANOrCZwEPLKD3ViPhQKSDXJfJMYTg
   project-id: 4CzWWTjm39C5T4SX
+  masking-keywords: authToken,Authorization
