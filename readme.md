@@ -4,7 +4,38 @@ This documentation is divided into two major parts:
 1. Instructions on how to run and get familiar with the application locally.
 2. Steps taken to make the APIs and the application in general secure.
 
+### 1. Instructions on how to run and get familiar with the application locally
 
+For the aim of setting up this application properly, the team has hosted the major dependencies
+using cloud services and containerized the application. The dependencies hosted on the cloud are the `mysql`
+database and the `redis` cluster.
+
+The only `requirement` to run this application locally is to have docker installed on your machine.
+After that is set up, you should follow the following instructions:
+
+1. Clone the project from github (main branch).
+2. Navigate to the directory containing the cloned project and run the following command 
+`docker build -t api-security.jar .`. Ensure your docker is running in the background before you do this.
+The purpose of this step is to build a docker image of the application.
+3. After doing this, the next thing is run the docker image in a container and you can do this by using the
+command below `docker run -p 8080:8080 api-security.jar`, which will run the docker container on the localhost, and
+enable you to access the APIs at port 8080.
+
+You can ensure the application is running by running the `app health check` request located in the application's postman API collection
+which can be found here for your reference `https://www.postman.com/lively-firefly-891824/workspace/my-public-workspace/collection/18629385-4d291df2-63ea-448a-85f1-c66f5813ab34?action=share&creator=18629385`.
+
+To access the APIs locally, you should change the postman collection environment to `localhost`. You can also access the APIs of the cloud
+hosted application by changing the environment to `cloudhost` in the postman collection.
+
+#### Getting familiar
+There are 3 user roles in the application; admin, teacher and student roles. Only an admin can create a teacher user. 
+We created an admin user with email `admin@gmail.com` and password `password123$` so you can use this for authentication
+and explore the functionality of the application. With this, you can create a teacher user.
+
+For more clarifications, we made a
+table listing all the endpoints in the application, a brief description of what they do, and who can access them. This is show below
+
+I hope this will be clear enough instructions for the judges, and once again thank your fot the opportunity to participate in this hackathon
 
 ### 2. Steps Taken to secure the apis and endpoints
 
