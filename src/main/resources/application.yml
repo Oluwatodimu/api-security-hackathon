@@ -9,7 +9,7 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
 #    url: jdbc:mysql://localhost:3306/api-security?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
 #    username: root
-#    password:
+#    password: Zawarudo12!@
     url: jdbc:mysql://student-management-system.crruakemgggf.us-east-1.rds.amazonaws.com:3306/api-security?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
     username: admin
     password: password123$
@@ -23,9 +23,9 @@ spring:
         useServerPrepStmts: true
 
 redis:
-  host: redis-16989.c14.us-east-1-3.ec2.cloud.redislabs.com
-  port: 16989
-  password: EqEd3t4jnqQfHw3BV8QnWT2fMs3XvNZQ
+  host: redis-16630.c240.us-east-1-3.ec2.cloud.redislabs.com
+  port: 16630
+  password: fc4gZITvWtcFlwIRKHosB0IhIjzWI5li
   database: 0
   timeout: 1000
   timeToLive: 15
@@ -46,3 +46,9 @@ treblle:
   api-key: HeyANOrCZwEPLKD3ViPhQKSDXJfJMYTg
   project-id: 4CzWWTjm39C5T4SX
   masking-keywords: authToken,Authorization
+
+#  docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
+#  docker build -t api-security.jar .
+
+# docker run -p 8080:8080 api-security.jar
