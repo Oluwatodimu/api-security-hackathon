@@ -15,10 +15,10 @@ After that is set up, you should follow the following instructions:
 
 1. Clone the project from Git Hub (main branch).
 2. Ensure you hae good internet and a powerful machine because the performance of  docker depends on these.
-3Navigate to the directory containing the cloned project and run the following command 
+3. Navigate to the directory containing the cloned project and run the following command 
 `docker build -t api-security.jar .`. Ensure your docker is running in the background before you do this.
 The purpose of this step is to build a docker image of the application.
-4After doing this, the next thing is to run the docker image in a container and you can do this by using the
+4. After doing this, the next thing is to run the docker image in a container and you can do this by using the
 the command below `docker run -p 8080:8080 api-security.jar`, which will run the docker container on the localhost, and
 enable you to access the APIs at port 8080.
 
