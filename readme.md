@@ -10,7 +10,7 @@ For the aim of setting up this application properly, the team has hosted the maj
 using cloud services and containerized the application. The dependencies hosted on the cloud are the `mysql`
 database and the `redis` cluster.
 
-The only `requirement` to run this application locally is to have docker installed on your machine.
+The only `requirement` to run this application locally is to have `docker` installed on your machine.
 After that is set up, you should follow the following instructions:
 
 1. Clone the project from Git Hub (main branch).
