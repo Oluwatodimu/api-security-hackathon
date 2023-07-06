@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping("/actuator")
+@RequestMapping("/api/v1/actuator")
 public class ActuatorController {
 
     @GetMapping(value = "/health")

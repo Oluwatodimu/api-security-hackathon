@@ -73,7 +73,7 @@ public class SecurityConfig {
                 .addFilterBefore(new AcceptHeaderFilter(objectMapper), HeaderWriterFilter.class)
                 .addFilterAfter(new RateLimitFilter(rateLimiter, objectMapper), WebAsyncManagerIntegrationFilter.class)
                 .authorizeRequests()
-                .antMatchers("/actuator/health").permitAll()
+                .antMatchers("/api/v1/actuator/health").permitAll()
                 .antMatchers("/api/v1/student/register").permitAll()
                 .antMatchers("/api/v1/student/activate").permitAll()
                 .antMatchers("/api/v1/user/authenticate").permitAll()
