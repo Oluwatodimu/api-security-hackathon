@@ -10,13 +10,13 @@ For the aim of setting up this application properly, the team has hosted the maj
 using cloud services and containerized the application. The dependencies hosted on the cloud are the `mysql`
 database and the `redis` cluster.
 
-The only `requirement` to run this application locally is to have docker installed on your machine.
+The only `requirement` to run this application locally is to have `docker` installed on your machine.
 After that is set up, you should follow the following instructions:
 
 1. Clone the project from Git Hub (main branch).
-2. Ensure you hae good internet and a powerful machine because the performance of  docker depends on these.
+2. Ensure you have good internet and a powerful machine because the performance of  docker depends on these.
 3. Navigate to the directory containing the cloned project and run the following command 
-`docker build -t api-security.jar .`. Ensure your docker is running in the background before you do this.
+`docker build -t api-security.jar .`. Ensure your `docker` is running in the background before you do this.
 The purpose of this step is to build a docker image of the application.
 4. After doing this, the next thing is to run the docker image in a container and you can do this by using the
 the command below `docker run -p 8080:8080 api-security.jar`, which will run the docker container on the localhost, and
@@ -52,32 +52,32 @@ a `rememberMe` parameter to manage the expiration time of the generated jwt toke
 are also embedded into the JWTs for the purpose of authorization.
 
 
-2. Input validation: This was implemented by creating a 3-layer input validation approach. The
-3. first layer of validation occurs by validating the request objects that are parsed from the API request body;
+2. Input validation: This was implemented by creating a 3-layer input validation approach. The first layer
+of validation occurs by validating the request objects that are parsed from the API request body;
 the second layer of validation occurs in the transition from the service layer to the
 repository layer and the third one occurs on the entities themselves before they are saved into the database.
 We also created Java filters to validate the request headers to ensure the required headers
-are present, e.g the presence of the `Accept` header and its mandatory value of `application/JSON
+are present, e.g the presence of the `Accept` header and its mandatory value of `application/json
 
 
-4. Rate Limiting: This was achieved using filters also, and we set a value of a maximum of 100 requests every 
+3. Rate Limiting: This was achieved using filters also, and we set a value of a maximum of 100 requests every 
 2 minutes. We also made these values configurable, in order for tweaking and giving freedom when testing locally.
 
 
-5. Logging and monitoring with treblle.
+4. Logging and monitoring with Treblle.
 
 
-6. Use UUIDs not IDs: The team ensured the use of UUIDs when saving entities into the database, and other operations.
+5. Use UUIDs not IDs: The team ensured the use of UUIDs when saving entities into the database, and other operations.
 
 
-7. Method limiting: This was also achieved to ensure that no malicious were made on the APIs, by trying 
+6. Method limiting: This was also achieved to ensure that no malicious were made on the APIs, by trying 
 different HTTP verbs.
 
 
-8. Minimum of 6 endpoints: The team created a total of 17 endpoints for this application.
+7. Minimum of 6 endpoints: The team created a total of 17 endpoints for this application.
 
 
-9. Other mandatory requirements were made, and the team ensured that they passed the API call
+8. Other mandatory requirements were made, and the team ensured that they passed the API call
 audit on the Treblle dashboard.
 
 The other measures the team took to ensure the security of the project APIs include:
