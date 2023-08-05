@@ -122,6 +122,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.treblle</groupId>
+            <artifactId>treblle-spring-boot-starter</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 
     <build>
